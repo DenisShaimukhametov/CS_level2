@@ -1,0 +1,20 @@
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\С# уровень 2_Каменецкий\Home_work\Home_Work1\Task1\bin\Debug\Task1.exe.config
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\С# уровень 2_Каменецкий\Home_work\Home_Work1\Task1\obj\Debug\Task1.csprojResolveAssemblyReference.cache
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\С# уровень 2_Каменецкий\Home_work\Home_Work1\Task1\bin\Debug\Task1.exe
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\С# уровень 2_Каменецкий\Home_work\Home_Work1\Task1\bin\Debug\Task1.pdb
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\С# уровень 2_Каменецкий\Home_work\Home_Work1\Task1\obj\Debug\Task1.exe
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\С# уровень 2_Каменецкий\Home_work\Home_Work1\Task1\obj\Debug\Task1.pdb
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\C# уровень 2 Каменецкий\Home_work\Home_Work2\Task1\bin\Debug\Task1.exe.config
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\C# уровень 2 Каменецкий\Home_work\Home_Work2\Task1\bin\Debug\Task1.exe
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\C# уровень 2 Каменецкий\Home_work\Home_Work2\Task1\bin\Debug\Task1.pdb
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\C# уровень 2 Каменецкий\Home_work\Home_Work2\Task1\obj\Debug\Task1.csprojResolveAssemblyReference.cache
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\C# уровень 2 Каменецкий\Home_work\Home_Work2\Task1\obj\Debug\Task1.csproj.CoreCompileInputs.cache
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\C# уровень 2 Каменецкий\Home_work\Home_Work2\Task1\obj\Debug\Task1.exe
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\C# уровень 2 Каменецкий\Home_work\Home_Work2\Task1\obj\Debug\Task1.pdb
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\C# уровень 2 Шмачилин\Урок 1\StarWars_5B2018-09-20 11-58-53%5D\StarWars\Task1\bin\Debug\Task1.exe.config
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\C# уровень 2 Шмачилин\Урок 1\StarWars_5B2018-09-20 11-58-53%5D\StarWars\Task1\bin\Debug\Task1.exe
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\C# уровень 2 Шмачилин\Урок 1\StarWars_5B2018-09-20 11-58-53%5D\StarWars\Task1\bin\Debug\Task1.pdb
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\C# уровень 2 Шмачилин\Урок 1\StarWars_5B2018-09-20 11-58-53%5D\StarWars\Task1\obj\Debug\Task1.csprojResolveAssemblyReference.cache
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\C# уровень 2 Шмачилин\Урок 1\StarWars_5B2018-09-20 11-58-53%5D\StarWars\Task1\obj\Debug\Task1.csproj.CoreCompileInputs.cache
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\C# уровень 2 Шмачилин\Урок 1\StarWars_5B2018-09-20 11-58-53%5D\StarWars\Task1\obj\Debug\Task1.exe
+D:\Denis\Уроки по программированию\Курсы\Разработчик С# от GeekBrains\C# уровень 2 Шмачилин\Урок 1\StarWars_5B2018-09-20 11-58-53%5D\StarWars\Task1\obj\Debug\Task1.pdb
