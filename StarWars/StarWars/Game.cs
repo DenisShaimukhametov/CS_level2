@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace StarWars
@@ -20,6 +21,8 @@ namespace StarWars
         private static GameObject[] __GameObjects;
         private static Asteroid[] __Asteroids;
         private static Bullet __Bullet;
+        private static Ship __Ship;
+
         private static int s_width;
         private static int s_height;
 
@@ -90,8 +93,27 @@ namespace StarWars
             }
 
             __Bullet = new Bullet(new Point(0, 200), new Size(4, 1));
+            __Ship = new Ship(400);
+            __Ship.ShipDie += OnShipDie;
 
+        }
 
+        private static void OnShipDie(object sender, EventArgs e)
+        {
+            __Ship = null;
+            __Timer.Enabled = false;
+            var g = Buffer.Graphics;
+            g.Clear(Color.DarkBlue);
+            g.DrawString(
+                "Game over!",
+                new Font(
+                    FontFamily.GenericSansSerif,
+                    60,
+                    FontStyle.Bold | FontStyle.Underline),
+                Brushes.White,
+                200, 100);
+
+            Buffer.Render();
         }
 
         /// <summary>Инициализация игровой логики</summary>
@@ -108,6 +130,30 @@ namespace StarWars
 
             __Timer.Tick += OnTimerTick;
             __Timer.Enabled = true;
+
+            MessageLog.LoadDelegate();
+        }
+
+
+        private static void OnGameFormKeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.ControlKey:
+                    __Bullet = new Bullet(__Ship.Rect.Location, new Size(4, 1));
+                    break;
+                case Keys.Up:
+                    __Ship.Up();
+                    break;
+                case Keys.Down:
+                    __Ship.Down();
+                    break;
+#if DEBUG
+                case Keys.W:
+                    __Ship.Die();
+                    break;
+#endif
+            }
         }
 
         /// <summary>Метод, вызываемвый таймером всякий раз при истечении указанного интервала времени</summary>
@@ -126,10 +172,12 @@ namespace StarWars
             foreach (var game_object in __GameObjects)
                 game_object.Draw();
 
-            foreach (var asteroid in __Asteroids)
-                asteroid.Draw();
+            for (var i = 0; i < __Asteroids.Length; i++)
+                __Asteroids[i]?.Draw();
 
-            __Bullet.Draw();
+            __Bullet?.Draw();
+
+            __Ship?.Draw();
 
             Buffer.Render();
         }
@@ -140,21 +188,49 @@ namespace StarWars
             foreach (var game_object in __GameObjects)
                 game_object.Update();
 
-            __Bullet.Update();
+            __Bullet?.Update();
 
-            foreach (var asteroid in __Asteroids)
+            for (var i = 0; i < __Asteroids.Length; i++)
             {
+                var asteroid = __Asteroids[i];
+                if (asteroid == null) continue;
                 asteroid.Update();
-                if (asteroid.Collision(__Bullet))
+                if (__Bullet != null && asteroid.Collision(__Bullet))
                 {
+                    __Asteroids[i] = null;
+                    __Bullet = null;
                     System.Media.SystemSounds.Hand.Play();
-                    Point pBullet = new Point(0, 200);
-                    GameObject.ReloadPosition(__Bullet, pBullet);
-                    Point pAsteroid = new Point(0, 60);
-                    GameObject.ReloadPosition(asteroid, pAsteroid);
+                    MessageLog.processor.ProcessMessage("Попадание в астероид");
+                    continue;
+                }
 
+                if (__Ship != null && asteroid.Collision(__Ship))
+                {
+                    var rnd = new Random();
+                    __Ship.Energy -= rnd.Next(1, 10);
+                    MessageLog.processor.ProcessMessage("Астероид столкнулся с кораблем");
+                    if (__Ship.Energy <= 0)
+                    {
+                        MessageLog.processor.ProcessMessage("Корабль уничтожен");
+                        __Ship.Die();
+                    }
                 }
             }
+            //foreach (var asteroid in __Asteroids)
+            //{
+            //    asteroid.Update();
+            //    if (asteroid.Collision(__Bullet))
+            //    {
+            //        System.Media.SystemSounds.Hand.Play();
+            //        Point pBullet = new Point(0, 200);
+            //        GameObject.ReloadPosition(__Bullet, pBullet);
+            //        Point pAsteroid = new Point(0, 60);
+            //        GameObject.ReloadPosition(asteroid, pAsteroid);
+
+            //    }
+            //}
         }
+
+       
     }
 }
